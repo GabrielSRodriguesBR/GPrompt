@@ -1,2 +1,4 @@
 # GPrompt
-AInda nao sei
+Visual Prompt/Shell built purely with CSS and JS
+
+
