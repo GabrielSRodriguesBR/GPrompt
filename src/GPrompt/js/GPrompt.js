@@ -5,6 +5,7 @@
 function GPrompt(text){
     this.title = text;
     this.title_line = text+'$ ';
+    this.home_title_line = text+'$ ';
     const cursor = '<span class="prompt-cursor"></span>';
     const line = '<div class="line-prompt"><span class="command-prompt"></span></div>';
     document.querySelector('.title-prompt').innerHTML = text;
@@ -77,10 +78,19 @@ function GPrompt(text){
         
      }
 
-     this.CreateNav = async function(optionsArray,enter,remove_cursor = false){
+     this.Clear = async function(exec_message = false){
+        if(exec_message)
+            await this.WriteText('clear',200,false);
+        var ul = document.querySelector('.command-list-prompt');
+        ul.innerHTML = '';
+        setNewLine(this.home_title_line);
+     }
 
-        await this.WriteText("cd menu-principal",100,false);
-        this.title_line = this.title_line +'/system/menu-principal$ ';
+
+     this.CreateNav = async function(path,optionsArray,enter,remove_cursor = false){
+
+        await this.WriteText(`cd ${path}`,100,false);
+        this.title_line = this.title_line + path + '$ ';
         setNewLine(this.title_line);
 
         await this.WriteText("ls",300,false);

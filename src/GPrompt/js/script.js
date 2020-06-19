@@ -1,8 +1,8 @@
 
 
- 
+ var prompt;
 document.addEventListener('DOMContentLoaded', async function (event) {
-    var prompt = new GPrompt('gabriel@matrix:');
+    prompt = new GPrompt('gabriel@matrix:');
 
     var optionsArray = [
                         {text: "Portfólio", id: "nav-portfolio", href: "#"}, 
@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', async function (event) {
                        ];
     var name = 'apresentacao(1)';
     var message = 'Olá, meu nome é Gabriel e seja bem vindo ;-)';
-    await prompt.CreateNav(optionsArray, true);
+    var path = '/system/menu-principal';
+    await prompt.CreateNav(path,optionsArray, true);
     // /prompt.RunMessage(name, message);
    
     

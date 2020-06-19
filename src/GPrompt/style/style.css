@@ -18,7 +18,8 @@
 
 .main-prompt{
     background: #212020;
-    min-height: 350px;
+    min-height: 50vh;
+    min-width: 400px;
    
 }
 
@@ -45,17 +46,17 @@
 }
 
 .btn-close{
-    background: #de4848;
-    border: 1px solid #ec1717;
+    background: #f25959;
+    border: 1px solid #e4000085;
 }
 
 .btn-min{
-    background: #ffec52;
-    border: 1px solid #fde900;
+    background: #ffec50;
+    border: 1px solid #e2d104;
 }
 
 .btn-max{
-    background: #76e640;
+    background: #98ff67;
     border: 1px solid #4cf506;
 }
 
